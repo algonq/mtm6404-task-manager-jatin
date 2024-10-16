@@ -1,4 +1,4 @@
-# React + Vite
+# mtm6404-task-manager-jatin
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
