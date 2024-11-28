@@ -1,26 +1,21 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { TaskProvider } from "./TaskContext";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import AddListForm from "./components/AddListForm";
-import ListView from "./components/ListView";
-import { AppProvider } from "./context/AppContext";
-import "./styles/App.css";
+import Home from "./components/Home";
+import ListDetail from "./components/ListDetail";
 
 const App = () => {
   return (
-    <AppProvider>
+    <TaskProvider>
       <Router>
         <Navbar />
-        <div className="content">
-          <Routes>
-            <Route path="/" element={<AddListForm />} />
-            <Route path="/list/:id" element={<ListView />} />
-          </Routes>
-        </div>
-        <Footer />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/list/:id" element={<ListDetail />} />
+        </Routes>
       </Router>
-    </AppProvider>
+    </TaskProvider>
   );
 };
 
